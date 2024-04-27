@@ -21,12 +21,11 @@ export const commands: Record<
   `
   Heyy there!! I'm baraa sayed a recent fresh graduate from computer scinece
   with a passion for web development and a love for linux and open source software, 
-  I love building stuff which has led me to dive into coding I find minimal software such as terminals 
-  very interesting in how much they can achieve by very little, outside of coding you'll 
-  find tinkering with linux distros, playing chess, going to gym. 
-  I'm excited about the opportunity to contribute to your projects and bring your digital ideas to life. 
-  Let's work together to make something awesome!
-  `,
+  I love building stuff which has led me to dive into coding I find minimal software 
+  such as terminals very interesting in how much they can achieve by very little, 
+  outside of coding you'll find tinkering with linux distros, playing chess, going to gym. 
+  I'm excited about the opportunity to contribute to your projects and 
+  bring your digital ideas to life. Let's work together to make something awesome!`,
   hostname: () => hostname,
   whoami: () => `${ipAddress} on ${userBrowser} from ${userCountry}`,
   date: () => new Date().toLocaleString(),
