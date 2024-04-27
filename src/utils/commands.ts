@@ -6,8 +6,6 @@ import { devFetch } from "./devfetch";
 import { detectBrowser } from "./detectBrowser";
 const hostname = `${window.location.hostname} on ${navigator.platform}`;
 
-
-
 const userBrowser = detectBrowser();
 let lolCount: number = 1;
 export const commands: Record<
@@ -50,7 +48,7 @@ export const commands: Record<
 
     switch (args[0]) {
       case "ls": {
-        let result = themes.map((t) => t.name.toLowerCase()).join(", ");
+        let result = themes.map((t) => t.name.toLowerCase()).join("\n ");
         result += `You can preview all these themes here: ${packageJson.repository.url}/tree/master/docs/themes`;
 
         return result;
