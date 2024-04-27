@@ -104,11 +104,6 @@ export const commands: Record<
 
     return `Opening mailto:${packageJson.author.email}...`;
   },
-  donate: () => {
-    window.open(packageJson.funding.url, "_blank");
-
-    return "Opening donation url...";
-  },
   devfetch: () => {
     return devFetch();
   },
