@@ -3,10 +3,11 @@ import themes from "../../themes.json";
 import { history } from "../stores/history";
 import { theme } from "../stores/theme";
 import { devFetch } from "./devfetch";
-import { detectBrowser } from "./detectBrowser";
+import { detectBrowser, fetchIPAddress,fetchCountry } from "./detectBrowser";
 const hostname = `${window.location.hostname} on ${navigator.platform}`;
-
+const ipAddress = await fetchIPAddress()
 const userBrowser = detectBrowser();
+const userCountry = await fetchCountry()
 let lolCount: number = 1;
 export const commands: Record<
   string,
@@ -14,7 +15,7 @@ export const commands: Record<
 > = {
   help: () => "Available commands: \n" + Object.keys(commands).join(" \n"),
   hostname: () => hostname,
-  whoami: () => `guest on ${userBrowser}`,
+  whoami: () => `${ipAddress} on ${userBrowser} from ${userCountry}`,
   date: () => new Date().toLocaleString(),
   echo: (args: string[]) => args.join(" "),
   lol: () => `lol x${lolCount++}`,
