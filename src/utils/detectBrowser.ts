@@ -36,10 +36,9 @@ export async function fetchIPAddress() {
   }
 }
 
-
 export async function fetchCountry() {
   try {
-    const ip = await fetchIPAddress()
+    const ip = await fetchIPAddress();
     let country = "";
     const response = await fetch(`https://ipwho.is/${ip}`);
     console.log("response", response);
@@ -47,7 +46,8 @@ export async function fetchCountry() {
       const data = await response.json();
       console.log(data);
       country = data.country;
-      return country;
+      const emoji = data.flag.emoji;
+      return `${country} ${emoji}`;
     } else {
       console.error("Failed to fetch country:", response.statusText);
       return "Unknown";
@@ -58,4 +58,4 @@ export async function fetchCountry() {
   }
 }
 
-console.log("fetch", await fetchCountry())
+console.log("fetch", await fetchCountry());
